@@ -1,6 +1,7 @@
 // var link = document.getElementById("get_number");
 // link.onclick = getNumber();
 $('#get_number').on('click', getNumber);
+$('#reset').on('click', reset_list);
 let generated_number_list = {};
 
 function getNumber(){
@@ -38,7 +39,13 @@ function generate_number(){
 }
 
 function update_list(){
-	let paragraph_2 = document.getElementById("number_list")
+	let paragraph_2 = document.getElementById("number_list");
 	let existed_number = Object.keys(generated_number_list);
 	paragraph_2.innerHTML = "Here are the list of existed numbers: " + existed_number;
+}
+
+function reset_list(){
+	let paragraph_2 = document.getElementById("number_list");
+	paragraph_2.innerHTML = " Click the Get number botton to start the game! ";
+	generated_number_list ={};
 }
