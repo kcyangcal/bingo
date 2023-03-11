@@ -47,9 +47,11 @@ function update_list(){
 	let existed_number_in_ordered = generated_number_list_2.join(', ');
 	paragraph_2.innerHTML = "Here are the list of existed numbers: " + existed_number;
 	paragraph_3.innerHTML = "Here are the numbers in the drawing order: " + existed_number_in_ordered;
+}
 
 function reset_list(){
 	let paragraph_2 = document.getElementById("number_list");
 	paragraph_2.innerHTML = " Click the Get number botton to start the game! ";
 	generated_number_list ={};
+	generated_number_list_2 =[];
 }
