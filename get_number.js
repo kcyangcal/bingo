@@ -51,6 +51,7 @@ function update_list(){
 
 function reset_list(){
 	let paragraph_2 = document.getElementById("number_list");
+	let paragraph_3 = document.getElementById("number_list_2");
 	paragraph_2.innerHTML = " Click the Get number botton to start the game! ";
 	paragraph_3.innerHTML = " Click the Get number botton to start the game! ";
 	generated_number_list ={};
