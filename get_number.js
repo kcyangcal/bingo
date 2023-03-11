@@ -3,6 +3,7 @@
 $('#get_number').on('click', getNumber);
 $('#reset').on('click', reset_list);
 let generated_number_list = {};
+let generated_number_list_2 = [];
 
 function getNumber(){
 	var min_number = 1;
@@ -13,6 +14,7 @@ function getNumber(){
 		let paragraph = document.getElementById("newnumber")
 		paragraph.innerHTML = randomnumber;
 		generated_number_list[randomnumber] = true;
+		generated_number_list_2.push(randomnumber);
 		update_list();
 		return true;
 	} else{
@@ -40,9 +42,11 @@ function generate_number(){
 
 function update_list(){
 	let paragraph_2 = document.getElementById("number_list");
+	let paragraph_3 = document.getElementById("number_list_2");
 	let existed_number = Object.keys(generated_number_list);
+	let existed_number_in_ordered = generated_number_list_2.join(', ');
 	paragraph_2.innerHTML = "Here are the list of existed numbers: " + existed_number;
-}
+	paragraph_3.innerHTML = "Here are the numbers in the drawing order: " + existed_number_in_ordered;
 
 function reset_list(){
 	let paragraph_2 = document.getElementById("number_list");
