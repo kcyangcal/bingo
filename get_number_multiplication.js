@@ -9,8 +9,8 @@ function getNumber(){
 	if (Object.keys(generated_number_list).length < 144){
 		var [randomnumber, num1, num2] = generate_unique_multiplication(); // Updated to receive num1 and num2
 		let paragraph = document.getElementById("newnumber");
-        let formattedNum1 = num1.toString().padStart(2, ' ');  // Add leading spaces
-        let formattedNum2 = num2.toString().padStart(2, ' ');  // Add leading spaces
+        let formattedNum1 = num1.toString().padStart(2, '0');  // Add leading spaces
+        let formattedNum2 = num2.toString().padStart(2, '0');  // Add leading spaces
 		let num1Element = document.getElementById("num1"); // New Element
 		let num2Element = document.getElementById("num2"); // New Element
 		paragraph.innerHTML = randomnumber;
