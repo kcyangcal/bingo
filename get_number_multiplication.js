@@ -11,7 +11,6 @@ function getNumber(){
 		let paragraph = document.getElementById("newnumber");
         let formattedNum1 = num1.toString().padStart(2, ' ');  // Add leading spaces
         let formattedNum2 = num2.toString().padStart(2, ' ');  // Add leading spaces
-
 		let num1Element = document.getElementById("num1"); // New Element
 		let num2Element = document.getElementById("num2"); // New Element
 		paragraph.innerHTML = randomnumber;
