@@ -25,7 +25,6 @@ function getNumber(){
 	}
 }
 
-
 function check_exist_number(value, dictionary){
 	return (value in dictionary);
 }

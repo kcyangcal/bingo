@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Number Formatting</title>
+</head>
+<body>
+	<div id="number_output">
+		<p id="num1" style="color:black;font-size:50px;text-align: center;"> &nbsp; </p>
+		<p id="num2" style="color:black;font-size:50px;text-align: center;"> &nbsp; </p>
+		<p id="newnumber" style="color:black;font-size:150px;text-align: center;"> &nbsp; </p>
+		<p id="number_list" style="color:black;font-size:15px;text-align: center;"> Click the Get number button to start the game! </p>
+	</div>
+	<button onclick="getNumber()">Get Number</button>
+
+	<script>
+		let generated_number_list = {};
+		let generated_number_list_2 = [];
+
+		function getNumber(){
+			var min_number = 1;
+			var max_number = 12;
+			if (Object.keys(generated_number_list).length < 144){
+				var randomnumber = Math.floor(Math.random() * max_number) + 1; // Simplified for demonstration
+				var num1 = Math.floor(Math.random() * max_number) + 1;
+				var num2 = Math.floor(Math.random() * max_number) + 1;
+				let paragraph = document.getElementById("newnumber");
+				let formattedNum1 = num1.toString().padStart(2, '0');  // Add leading zeros
+				let formattedNum2 = num2.toString().padStart(2, '0');  // Add leading zeros
+				let num1Element = document.getElementById("num1");
+				let num2Element = document.getElementById("num2");
+				paragraph.innerHTML = randomnumber;
+				num1Element.innerHTML = "Num 1: " + formattedNum1;
+				num2Element.innerHTML = "Num 2: " + formattedNum2;
+				generated_number_list[randomnumber] = true;
+				generated_number_list_2.push(randomnumber);
+				return true;
+			} else{
+				return false;
+			}
+		}
+	</script>
+</body>
+</html>
