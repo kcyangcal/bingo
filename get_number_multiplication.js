@@ -9,11 +9,14 @@ function getNumber(){
 	if (Object.keys(generated_number_list).length < 144){
 		var [randomnumber, num1, num2] = generate_unique_multiplication(); // Updated to receive num1 and num2
 		let paragraph = document.getElementById("newnumber");
+        let formattedNum1 = num1.toString().padStart(2, ' ');  // Add leading spaces
+        let formattedNum2 = num2.toString().padStart(2, ' ');  // Add leading spaces
+
 		let num1Element = document.getElementById("num1"); // New Element
 		let num2Element = document.getElementById("num2"); // New Element
 		paragraph.innerHTML = randomnumber;
-		num1Element.innerHTML = "Num 1: " + num1; // New Element
-		num2Element.innerHTML = "Num 2: " + num2; // New Element
+        num1Element.innerHTML = "Num 1: " + formattedNum1;
+        num2Element.innerHTML = "Num 2: " + formattedNum2;
 		generated_number_list[randomnumber] = true;
 		generated_number_list_2.push(randomnumber);
 		update_list();
