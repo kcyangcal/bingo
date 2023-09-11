@@ -44,8 +44,8 @@ function getNumber(){
         paragraph.innerHTML = randomnumber;
         toggleRandomNumberVisibility();
 		// paragraph.innerHTML = randomnumber;
-        num1Element.innerHTML = "Num 1: " + formattedNum1;
-        num2Element.innerHTML = "Num 2: " + formattedNum2;
+        num1Element.innerHTML = "Number 1: " + formattedNum1;
+        num2Element.innerHTML = "Number 2: " + formattedNum2;
 		generated_number_list[randomnumber] = true;
 		generated_number_list_2.push(randomnumber);
         lastRandomNumber = randomnumber;
