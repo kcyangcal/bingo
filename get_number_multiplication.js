@@ -3,15 +3,18 @@ $('#reset').on('click', reset_list);
 $('#show_random').on('click', showRandomNumber);
 document.addEventListener('DOMContentLoaded', function() {
     var toggleSwitch = document.getElementById("toggleSwitch");
-    toggleSwitch.addEventListener("change", function() {
-        var paragraph = document.getElementById("newnumber");
-        if (toggleSwitch.checked) {
-            paragraph.style.display = "block";
-        } else {
-            paragraph.style.display = "none";
-        }
-    });
+    toggleSwitch.addEventListener("change", toggleRandomNumberVisibility);
 });
+
+function toggleRandomNumberVisibility() {
+    var paragraph = document.getElementById("newnumber");
+    var toggleSwitch = document.getElementById("toggleSwitch");
+    if (toggleSwitch.checked) {
+        paragraph.style.display = "block";
+    } else {
+        paragraph.style.display = "none";
+    }
+}
 
 // Initialize a variable to store the last generated random number
 let lastRandomNumber = null;
@@ -31,12 +34,8 @@ function getNumber(){
         let formattedNum2 = num2.toString().padStart(2, '0');  // Add leading spaces
 		let num1Element = document.getElementById("num1"); // New Element
 		let num2Element = document.getElementById("num2"); // New Element
-        // Check if the toggle is on
-        if(toggleSwitch.checked) {
-            paragraph.innerHTML = randomnumber;
-        } else {
-            paragraph.innerHTML = "&nbsp;";
-        }
+        paragraph.innerHTML = randomnumber;
+        toggleRandomNumberVisibility();
 		// paragraph.innerHTML = randomnumber;
         num1Element.innerHTML = "Num 1: " + formattedNum1;
         num2Element.innerHTML = "Num 2: " + formattedNum2;
