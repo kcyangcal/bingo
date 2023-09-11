@@ -1,14 +1,15 @@
 $('#get_number').on('click', getNumber);
 $('#reset').on('click', reset_list);
 $('#show_random').on('click', showRandomNumber);
+
 document.addEventListener('DOMContentLoaded', function() {
-    var toggleSwitch = document.getElementById("toggleSwitch");
+    var toggleSwitch = document.getElementById("toggle_random");  // Changed from "toggleSwitch" to "toggle_random"
     toggleSwitch.addEventListener("change", toggleRandomNumberVisibility);
 });
 
 function toggleRandomNumberVisibility() {
     var paragraph = document.getElementById("newnumber");
-    var toggleSwitch = document.getElementById("toggleSwitch");
+    var toggleSwitch = document.getElementById("toggle_random");  // Changed from "toggleSwitch" to "toggle_random"
     if (toggleSwitch.checked) {
         paragraph.style.display = "block";
     } else {
