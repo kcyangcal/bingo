@@ -19,7 +19,13 @@ function getNumber(){
         let formattedNum2 = num2.toString().padStart(2, '0');  // Add leading spaces
 		let num1Element = document.getElementById("num1"); // New Element
 		let num2Element = document.getElementById("num2"); // New Element
-		paragraph.innerHTML = randomnumber;
+        // Check if the toggle is on
+        if(document.getElementById("toggle_random").checked) {
+            paragraph.innerHTML = randomnumber;
+        } else {
+            paragraph.innerHTML = "&nbsp;";
+        }
+		// paragraph.innerHTML = randomnumber;
         num1Element.innerHTML = "Num 1: " + formattedNum1;
         num2Element.innerHTML = "Num 2: " + formattedNum2;
 		generated_number_list[randomnumber] = true;
