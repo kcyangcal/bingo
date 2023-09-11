@@ -1,6 +1,17 @@
 $('#get_number').on('click', getNumber);
 $('#reset').on('click', reset_list);
 $('#show_random').on('click', showRandomNumber);
+document.addEventListener('DOMContentLoaded', function() {
+    var toggleSwitch = document.getElementById("toggleSwitch");
+    toggleSwitch.addEventListener("change", function() {
+        var paragraph = document.getElementById("newnumber");
+        if (toggleSwitch.checked) {
+            paragraph.style.display = "block";
+        } else {
+            paragraph.style.display = "none";
+        }
+    });
+});
 
 // Initialize a variable to store the last generated random number
 let lastRandomNumber = null;
@@ -12,6 +23,7 @@ let generated_number_list_2 = [];
 function getNumber(){
 	var min_number = 1;
 	var max_number = 12;
+    var toggleSwitch = document.getElementById("toggleSwitch");
 	if (Object.keys(generated_number_list).length < 144){
 		var [randomnumber, num1, num2] = generate_unique_multiplication(); // Updated to receive num1 and num2
 		let paragraph = document.getElementById("newnumber");
@@ -20,7 +32,7 @@ function getNumber(){
 		let num1Element = document.getElementById("num1"); // New Element
 		let num2Element = document.getElementById("num2"); // New Element
         // Check if the toggle is on
-        if(document.getElementById("toggle_random").checked) {
+        if(toggleSwitch.checked) {
             paragraph.innerHTML = randomnumber;
         } else {
             paragraph.innerHTML = "&nbsp;";
