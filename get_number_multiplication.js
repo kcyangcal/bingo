@@ -30,6 +30,7 @@ function getNumber(){
     var toggleSwitch = document.getElementById("toggleSwitch");
 	if (Object.keys(generated_number_list).length < 144){
 		var [randomnumber, num1, num2] = generate_unique_multiplication(); // Updated to receive num1 and num2
+        console.log("num1:", num1, "num2:", num2);  // Debugging line
 		let paragraph = document.getElementById("newnumber");
         let formattedNum1 = num1.toString().padStart(2, '0');  // Add leading spaces
         let formattedNum2 = num2.toString().padStart(2, '0');  // Add leading spaces
