@@ -10,11 +10,15 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function toggleRandomNumberVisibility() {
     var paragraph = document.getElementById("newnumber");
+    var paragraphlist2 = document.getElementById("number_list_2");
+    
     var toggleSwitch = document.getElementById("toggle_random"); // Changed from "toggleSwitch" to "toggle_random"
     if (toggleSwitch.checked) {
         paragraph.style.visibility = "visible";  // Changed from "block" to "visible"
+        paragraphlist2.style.visibility = "visible";  // Changed from "block" to "visible"
     } else {
         paragraph.style.visibility = "hidden";  // Changed from "none" to "hidden"
+        paragraphlist2.style.visibility = "hidden";  // Changed from "block" to "visible"
     }
 }
 
