@@ -1,7 +1,13 @@
 $('#get_number').on('click', getNumber);
 $('#reset').on('click', reset_list);
+$('#show_random').on('click', showRandomNumber);
+
+// Initialize a variable to store the last generated random number
+let lastRandomNumber = null;
+
 let generated_number_list = {};
 let generated_number_list_2 = [];
+
 
 function getNumber(){
 	var min_number = 1;
@@ -18,6 +24,7 @@ function getNumber(){
         num2Element.innerHTML = "Num 2: " + formattedNum2;
 		generated_number_list[randomnumber] = true;
 		generated_number_list_2.push(randomnumber);
+        lastRandomNumber = randomnumber;
 		update_list();
 		return true;
 	} else{
@@ -60,4 +67,12 @@ function reset_list(){
 	paragraph_3.innerHTML = " ";
 	generated_number_list ={};
 	generated_number_list_2 =[];
+}
+
+function showRandomNumber() {
+    if (lastRandomNumber !== null) {
+        alert("The last generated random number is: " + lastRandomNumber);
+    } else {
+        alert("No number has been generated yet.");
+    }
 }
