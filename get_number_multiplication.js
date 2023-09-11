@@ -7,13 +7,14 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleSwitch.addEventListener("change", toggleRandomNumberVisibility);
 });
 
+
 function toggleRandomNumberVisibility() {
     var paragraph = document.getElementById("newnumber");
     var toggleSwitch = document.getElementById("toggle_random"); // Changed from "toggleSwitch" to "toggle_random"
     if (toggleSwitch.checked) {
-        paragraph.style.display = "block";
+        paragraph.style.visibility = "visible";  // Changed from "block" to "visible"
     } else {
-        paragraph.style.display = "none";
+        paragraph.style.visibility = "hidden";  // Changed from "none" to "hidden"
     }
 }
 
