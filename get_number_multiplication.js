@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function toggleRandomNumberVisibility() {
     var paragraph = document.getElementById("newnumber");
-    var paragraphlist2 = document.getElementById("number_list_2");
+    var paragraphlist2 = document.getElementById("number_list");
     
     var toggleSwitch = document.getElementById("toggle_random"); // Changed from "toggleSwitch" to "toggle_random"
     if (toggleSwitch.checked) {
