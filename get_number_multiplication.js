@@ -28,33 +28,28 @@ let lastRandomNumber = null;
 let generated_number_list = {};
 let generated_number_list_2 = [];
 
-
 function getNumber(){
-	var min_number = 1;
-	var max_number = 12;
-    var toggleSwitch = document.getElementById("toggleSwitch");
-	if (Object.keys(generated_number_list).length < 144){
-		var [randomnumber, num1, num2] = generate_unique_multiplication(); // Updated to receive num1 and num2
-        console.log("num1:", num1, "num2:", num2);  // Debugging line
-		let paragraph = document.getElementById("newnumber");
-        let formattedNum1 = num1.toString().padStart(2, '0');  // Add leading spaces
-        let formattedNum2 = num2.toString().padStart(2, '0');  // Add leading spaces
-		let num1Element = document.getElementById("num1"); // New Element
-		let num2Element = document.getElementById("num2"); // New Element
+    var min_number = 1;
+    var max_number = 12;
+    var toggleSwitch = document.getElementById("toggle_random"); // Changed from "toggleSwitch" to "toggle_random"
+    if (Object.keys(generated_number_list).length < 144){
+        var [randomnumber, num1, num2] = generate_unique_multiplication();
+        let paragraph = document.getElementById("newnumber");
+        let num1Element = document.getElementById("num1"); // Existing Element
+        let formattedExpression = `${num1} X ${num2}`;  // Formatted as per your requirement
         paragraph.innerHTML = randomnumber;
+        num1Element.innerHTML = formattedExpression;  // Updated this line
         toggleRandomNumberVisibility();
-		// paragraph.innerHTML = randomnumber;
-        num1Element.innerHTML = "Number 1: " + formattedNum1;
-        num2Element.innerHTML = "Number 2: " + formattedNum2;
-		generated_number_list[randomnumber] = true;
-		generated_number_list_2.push(randomnumber);
+        generated_number_list[randomnumber] = true;
+        generated_number_list_2.push(randomnumber);
         lastRandomNumber = randomnumber;
-		update_list();
-		return true;
-	} else{
-		return false;
-	}
+        update_list();
+        return true;
+    } else {
+        return false;
+    }
 }
+
 
 function check_exist_number(value, dictionary){
 	return (value in dictionary);
